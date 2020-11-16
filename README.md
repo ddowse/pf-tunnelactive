@@ -13,14 +13,18 @@ Download the code from github.
 The Script can be run via shell(ssh) and send into the background like this
 
 ```
-[2.5.0-DEVELOPMENT][root@pfSense.localdomain]/root: nohup /root/pf-tunnelactive/tunnelactive.php 10
+[2.5.0-DEVELOPMENT][root@pfSense.localdomain]/root: nohup /root/pf-tunnelactive/tunnelactive.php 10 3
 ```
 
 or use pfsense **Command Prompt** found in **Diagnostics**. (Untested!)
 
-The Programm takes 1 argument. The time in seconds to wait for the connection status to change to "Up". 
+The Programm takes 2 arguments. 
 
-In the example above it's 10 seconds. 
+The first is the time in seconds to wait for the connection status to change to "Up" for eacht tunnel/vpn.
+The second is the intervall to recheck the status of the connections in seconds.
+
+In the example above it's 10 seconds to wait for the VPN Connection to establish and recheck every 3 seconds after
+a successful connection is made for all tunnels.
 
 To stop the exection, you have to terminate to program.
 
@@ -56,21 +60,13 @@ Stopping: PP_Amsterdam UDP4 *  *  *
 Stopping: PP_Berlin UDP4 *  *  * 
 Stopping: PP_Oslo UDP4 *  *  * 
 
-Starting:PP_Oslo UDP4 *  *  * up
+Starting:PP_Oslo UDP4 *  *  * OK
+Starting:PP_Berlin UDP4 *  * OK
+Starting:PP_Amsterdam UDP4 *  *  * OK
+Checking (3)... *  *  * 
+Checking (3)... *  *  * 
+Checking (3)... *  *  * 
 
-SUCCESS
-
-Starting:PP_Berlin UDP4 *  * up
-
-SUCCESS
-
-Starting:PP_Amsterdam UDP4 *  *  * up
-
-SUCCESS
-Nothing to do Hit Ctrl+c to stop
- - 5 Second Pause
-Nothing to do Hit Ctrl+c to stop
- - 5 Second Pause
 ```
 
 As you can see the script will first take alle tunnels down with 
@@ -180,3 +176,5 @@ default            192.168.1.1        UGS      vtnet0
 As you can see the routing is set to route the VPN Server IP's from 
 
 ovpnc3 => (80.255.7.98) ovpnc2 => (85.17.28.145) ovpnc1 => (0.0.0.0/1 ) Internet
+
+ATTENTION! May contains bugs - Please report if found. Thanks.
