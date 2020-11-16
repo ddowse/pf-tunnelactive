@@ -12,10 +12,10 @@ your pfsense or don't want to. You can download the [Zip](https://github.com/ddo
 files.
 
 ```bash
-[root@pfSense]/root: mkdir pf-tunnelactive
-[root@pfSense]/root: fetch -o pf-tunnelactive/ https://raw.githubusercontent.com/ddowse/pf-tunnelactive/main/addroute.sh
-[root@pfSense]/root: fetch -o pf-tunnelactive/ https://raw.githubusercontent.com/ddowse/pf-tunnelactive/main/tunnelactive.php
-[root@pfSense]/root: chmod u+x pf-tunnelactive/main/addroute.sh
+[root@pfSense ~]# mkdir pf-tunnelactive
+[root@pfSense ~]# fetch -o pf-tunnelactive/ https://raw.githubusercontent.com/ddowse/pf-tunnelactive/main/addroute.sh
+[root@pfSense ~]# fetch -o pf-tunnelactive/ https://raw.githubusercontent.com/ddowse/pf-tunnelactive/main/tunnelactive.php
+[root@pfSense ~]# chmod u+x pf-tunnelactive/main/addroute.sh
 ```
 
 
@@ -23,7 +23,7 @@ files.
 The Script can be run via shell(ssh) and send into the background like this
 
 ```
-[root@pfSense]/root: nohup php /root/pf-tunnelactive/tunnelactive.php 10 3 >> /var/log/tunnelactive.log &
+[root@pfSense ~]# nohup php /root/pf-tunnelactive/tunnelactive.php 10 3 >> /var/log/tunnelactive.log &
 ```
 
 or use pfsense **Command Prompt** found in **Diagnostics**. (Untested!)
@@ -38,8 +38,8 @@ a successful connection is made for all tunnels.
 
 To stop the exection, you have to terminate to program at the moment e.g. like this.
 
-```
-[root@pfSense]/root: pkill -f tunnelactive 
+```bash
+[root@pfSense ~]# pkill -f tunnelactive 
 ```
 
 ### Example 
