@@ -1,15 +1,15 @@
-# pf-tunnelactive
+## pf-tunnelactive
 Check and restart OpenVPN Client(s) and Cascade Setup
 
-This PHP Code uses the native php functions of pfsense to check the status of an OpenVPN client connection.  
-The intention and main purpose is to keep a 3 tunnel cascade setup alive and restart all tunnels in the  
-correct order in the event of a disconnect.  
+This PHP Code is using the native php functions of pfsense to check the status of OpenVPN client connections.  
+The intention and main purpose of this script is to keep 3 tunnel in a cascade setup alive and restart all tunnels 
+in the correct order in the event of a disconnect of any of the VPN connections.  
 
-#Installation
+### Installation
 
 Download the code from github.
 
-#Usage
+### Usage
 The Script can be run via shell(ssh) and send into the background like this
 
 ```
@@ -32,7 +32,7 @@ To stop the exection, you have to terminate to program.
 [2.5.0-DEVELOPMENT][root@pfSense.localdomain]/root: pkill -f tunnelactive.php
 ```
 
-#Examples
+### Example 
 
 If 1 VPN connection can't be established the programme will loop forever on this tunnel. 
 You should then check the OpenVPN Logs for further details. 
@@ -122,10 +122,12 @@ service_control_start("openvpn", $extras);
 
 reverse way. As we want to create a cascade of tunnels.
 
-#Cascading 
+### Cascading VPN
 
 *Important* We assume that you have checked that your OpenVPN Configuration is in general functional and
 that your VPN Provider Supports this. *Important*
+
+First step **Create a Backup** of your configurations.
 
 The Numbering is vpnid. 
 
@@ -177,4 +179,5 @@ As you can see the routing is set to route the VPN Server IP's from
 
 ovpnc3 => (80.255.7.98) ovpnc2 => (85.17.28.145) ovpnc1 => (0.0.0.0/1 ) Internet
 
-ATTENTION! May contains bugs - Please report if found. Thanks.
+## ATTENTION! May contains bugs - Please report if found. Thanks.
+
