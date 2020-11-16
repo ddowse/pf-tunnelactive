@@ -24,14 +24,21 @@ function Send_msg($notice)
     );
 } 
 
+function Check($clients) {
+    foreach($clients as $check) {
+	    $status = $check['status'];
+           if (strcmp($status, "up") != 0) { 
+	    return "true"; } 
+    }
+}	
+
 while(true) {
         
-    echo "Checking (" . $argv[2] . ")..." ;
+    echo "Sleeping (" . $argv[2] . ")..." ;
             
-    $clients = openvpn_get_active_clients();
+        $clients = openvpn_get_active_clients();
         
-    foreach($clients as $check) {
-        if (in_array("down", $check, true)) {  
+        if (Check($clients)) {  
                     
                echo "\nReconnecting...\n";    
         
@@ -80,15 +87,13 @@ while(true) {
                 }    
             }
                 Send_msg("OpenVPN Tunnels restarted");    
-            break;
-        
+             
         } else {
             for ($i=0;$i<$argv[2];$i++) {
                    sleep(1);
                    echo " * ";
             } 
             echo "\n";
-            break;
         }
     }
-}
+
