@@ -15,7 +15,7 @@ files.
 [root@pfSense ~]# mkdir pf-tunnelactive
 [root@pfSense ~]# fetch -o pf-tunnelactive/ https://raw.githubusercontent.com/ddowse/pf-tunnelactive/main/addroute.sh
 [root@pfSense ~]# fetch -o pf-tunnelactive/ https://raw.githubusercontent.com/ddowse/pf-tunnelactive/main/tunnelactive.php
-[root@pfSense ~]# chmod u+x pf-tunnelactive/main/addroute.sh
+[root@pfSense ~]# chmod u+x pf-tunnelactive/addroute.sh
 ```
 
 
