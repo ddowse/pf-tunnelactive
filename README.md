@@ -12,10 +12,10 @@ your pfsense or don't want to. You can download the [Zip](https://github.com/ddo
 files.
 
 ```bash
-[2.5.0-DEVELOPMENT][root@pfSense.localdomain]/root: mkdir pf-tunnelactive
-[2.5.0-DEVELOPMENT][root@pfSense.localdomain]/root:fetch -o pf-tunnelactive/ https://raw.githubusercontent.com/ddowse/pf-tunnelactive/main/addroute.sh
-[2.5.0-DEVELOPMENT][root@pfSense.localdomain]/root:fetch -o pf-tunnelactive/ https://raw.githubusercontent.com/ddowse/pf-tunnelactive/main/tunnelactive.php
-[2.5.0-DEVELOPMENT][root@pfSense.localdomain]/root: chmod u+x pf-tunnelactive/main/addroute.sh
+[root@pfSense.localdomain]/root: mkdir pf-tunnelactive
+[root@pfSense.localdomain]/root:fetch -o pf-tunnelactive/ https://raw.githubusercontent.com/ddowse/pf-tunnelactive/main/addroute.sh
+[root@pfSense.localdomain]/root:fetch -o pf-tunnelactive/ https://raw.githubusercontent.com/ddowse/pf-tunnelactive/main/tunnelactive.php
+[root@pfSense.localdomain]/root: chmod u+x pf-tunnelactive/main/addroute.sh
 ```
 
 
@@ -23,7 +23,7 @@ files.
 The Script can be run via shell(ssh) and send into the background like this
 
 ```
-[2.5.0-DEVELOPMENT][root@pfSense.localdomain]/root: nohup php /root/pf-tunnelactive/tunnelactive.php 10 3 >> /var/log/tunnelactive.log &
+[root@pfSense.localdomain]/root: nohup php /root/pf-tunnelactive/tunnelactive.php 10 3 >> /var/log/tunnelactive.log &
 ```
 
 or use pfsense **Command Prompt** found in **Diagnostics**. (Untested!)
@@ -39,7 +39,7 @@ a successful connection is made for all tunnels.
 To stop the exection, you have to terminate to program at the moment e.g. like this.
 
 ```
-[2.5.0-DEVELOPMENT][root@pfSense.localdomain]/root: pkill -f tunnelactive 
+[root@pfSense.localdomain]/root: pkill -f tunnelactive 
 ```
 
 ### Example 
