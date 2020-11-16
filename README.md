@@ -22,7 +22,7 @@ files.
 ### Usage
 The Script can be run via shell(ssh) and send into the background like this
 
-```
+```bash
 [root@pfSense ~]# nohup php /root/pf-tunnelactive/tunnelactive.php 10 3 >> /var/log/tunnelactive.log &
 ```
 
@@ -90,7 +90,7 @@ openvpn_get_active_clients();
 ```
 as an array of objects.
 
- ```json
+ ```php
  Array
 (
     [0] => Array
