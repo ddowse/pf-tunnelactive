@@ -125,8 +125,8 @@ reverse way. As we want to create a cascade of tunnels.
 ### Cascading VPN
 
 
-![Picture](cascade_tunnels.png)
-##### Picture by John1271 
+![imageoftunnels](cascade_tunnels.png)
+###### image made by John1271 :heart: 
 
 *Important* We assume that you have checked that your OpenVPN Configuration is in general functional and
 that your VPN Provider Supports this. *Important*
