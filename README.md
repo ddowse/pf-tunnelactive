@@ -1,9 +1,9 @@
 ## pf-tunnelactive
 Check and restart OpenVPN Client(s) and Cascade Setup
 
-This PHP Code uses the native php functions of pfsense to check the status of an OpenVPN client connection.  
-The intention and main purpose is to keep a 3 tunnel cascade setup alive and restart all tunnels in the  
-correct order in the event of a disconnect.  
+This PHP Code is using the native php functions of pfsense to check the status of OpenVPN client connections.  
+The intention and main purpose of this script is to keep 3 tunnel in a cascade setup alive and restart all tunnels 
+in the correct order in the event of a disconnect of any of the VPN connections.  
 
 ### Installation
 
