@@ -7,8 +7,8 @@ if a single tunnel disconnects.
 
 ### Installation
 
-Clone the repo or if you do not have [git](https://docs.netgate.com/pfsense/en/latest/recipes/freebsd-pkg-repo.html) installed on
-your pfsense or don't want to. You can download the [Zip](https://github.com/ddowse/pf-tunnelactive/archive/main.zip) or fetch the
+Clone the repo or if you dont have [git](https://docs.netgate.com/pfsense/en/latest/recipes/freebsd-pkg-repo.html) installed on
+your pfsense. You can download the [Zip](https://github.com/ddowse/pf-tunnelactive/archive/main.zip) or fetch the
 files.
 
 ```bash
