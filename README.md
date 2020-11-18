@@ -155,7 +155,7 @@ and add under **Advanced Configuration** / **Custom options** In the configurati
 and VPNID 2. 
 
 ```
-up "/root/pf-tunnelactive/addroute.sh NEXT_VPNSERVER_IP"
+route-up "/root/pf-tunnelactive/addroute.sh NEXT_VPNSERVER_IP"
 ```
 Replace NEXT_VPN_SERVER_IP with the IP of the next VPN Endpoint you want to connect to.
 
