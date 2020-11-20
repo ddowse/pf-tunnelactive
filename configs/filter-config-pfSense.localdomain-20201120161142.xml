@@ -1,0 +1,71 @@
+
+<filter>
+	<rule>
+		<id></id>
+		<tracker>1605885950</tracker>
+		<type>block</type>
+		<interface>wan</interface>
+		<ipprotocol>inet</ipprotocol>
+		<tag></tag>
+		<tagged></tagged>
+		<direction>any</direction>
+		<floating>yes</floating>
+		<max></max>
+		<max-src-nodes></max-src-nodes>
+		<max-src-conn></max-src-conn>
+		<max-src-states></max-src-states>
+		<statetimeout></statetimeout>
+		<statetype><![CDATA[keep state]]></statetype>
+		<os></os>
+		<source>
+			<network>lan</network>
+		</source>
+		<destination>
+			<any></any>
+		</destination>
+		<log></log>
+		<descr><![CDATA[Block any traffic leaving WAN from local network]]></descr>
+		<created>
+			<time>1605885950</time>
+			<username><![CDATA[admin@192.168.2.101 (Local Database)]]></username>
+		</created>
+		<updated>
+			<time>1605886393</time>
+			<username><![CDATA[admin@192.168.2.101 (Local Database)]]></username>
+		</updated>
+	</rule>
+	<rule>
+		<id></id>
+		<tracker>0100000101</tracker>
+		<type>pass</type>
+		<interface>lan</interface>
+		<ipprotocol>inet</ipprotocol>
+		<tag></tag>
+		<tagged></tagged>
+		<max></max>
+		<max-src-nodes></max-src-nodes>
+		<max-src-conn></max-src-conn>
+		<max-src-states></max-src-states>
+		<statetimeout></statetimeout>
+		<statetype><![CDATA[keep state]]></statetype>
+		<os></os>
+		<source>
+			<network>lan</network>
+		</source>
+		<destination>
+			<any></any>
+		</destination>
+		<log></log>
+		<descr><![CDATA[Default allow LAN to any]]></descr>
+		<updated>
+			<time>1605886180</time>
+			<username><![CDATA[admin@192.168.2.101 (Local Database)]]></username>
+		</updated>
+	</rule>
+	<separator>
+		<wan></wan>
+		<lan></lan>
+		<opt3></opt3>
+		<floatingrules></floatingrules>
+	</separator>
+</filter>

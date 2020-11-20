@@ -1,0 +1,122 @@
+
+<nat>
+	<outbound>
+		<rule>
+			<source>
+				<network>any</network>
+			</source>
+			<sourceport></sourceport>
+			<descr></descr>
+			<target></target>
+			<targetip></targetip>
+			<targetip_subnet></targetip_subnet>
+			<interface>opt1</interface>
+			<poolopts></poolopts>
+			<source_hash_key></source_hash_key>
+			<ipprotocol>inet</ipprotocol>
+			<destination>
+				<any></any>
+			</destination>
+			<created>
+				<time>1605819657</time>
+				<username><![CDATA[admin@192.168.2.101 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1605828437</time>
+				<username><![CDATA[admin@192.168.2.101 (Local Database)]]></username>
+			</updated>
+		</rule>
+		<rule>
+			<source>
+				<network>any</network>
+			</source>
+			<sourceport></sourceport>
+			<descr></descr>
+			<target></target>
+			<targetip></targetip>
+			<targetip_subnet></targetip_subnet>
+			<interface>opt2</interface>
+			<poolopts></poolopts>
+			<source_hash_key></source_hash_key>
+			<ipprotocol>inet</ipprotocol>
+			<destination>
+				<any></any>
+			</destination>
+			<created>
+				<time>1605828372</time>
+				<username><![CDATA[admin@192.168.2.101 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1605828446</time>
+				<username><![CDATA[admin@192.168.2.101 (Local Database)]]></username>
+			</updated>
+		</rule>
+		<rule>
+			<source>
+				<network>any</network>
+			</source>
+			<sourceport></sourceport>
+			<descr></descr>
+			<target></target>
+			<targetip></targetip>
+			<targetip_subnet></targetip_subnet>
+			<interface>opt3</interface>
+			<poolopts></poolopts>
+			<source_hash_key></source_hash_key>
+			<ipprotocol>inet</ipprotocol>
+			<destination>
+				<any></any>
+			</destination>
+			<created>
+				<time>1605828386</time>
+				<username><![CDATA[admin@192.168.2.101 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1605828452</time>
+				<username><![CDATA[admin@192.168.2.101 (Local Database)]]></username>
+			</updated>
+		</rule>
+		<rule>
+			<interface>wan</interface>
+			<source>
+				<network>127.0.0.0/8</network>
+			</source>
+			<sourceport></sourceport>
+			<target></target>
+			<destination>
+				<any></any>
+			</destination>
+			<natport></natport>
+			<descr><![CDATA[Auto created rule - localhost to WAN]]></descr>
+			<created>
+				<time>1605821746</time>
+				<username><![CDATA[Manual Outbound NAT Switch]]></username>
+			</created>
+		</rule>
+		<rule>
+			<source>
+				<network>(self)</network>
+			</source>
+			<sourceport></sourceport>
+			<descr><![CDATA[Auto created rule - LAN to WAN]]></descr>
+			<target></target>
+			<targetip></targetip>
+			<targetip_subnet></targetip_subnet>
+			<interface>wan</interface>
+			<poolopts></poolopts>
+			<source_hash_key></source_hash_key>
+			<destination>
+				<any></any>
+			</destination>
+			<created>
+				<time>1605821746</time>
+				<username><![CDATA[Manual Outbound NAT Switch]]></username>
+			</created>
+			<updated>
+				<time>1605831544</time>
+				<username><![CDATA[admin@192.168.2.101 (Local Database)]]></username>
+			</updated>
+		</rule>
+		<mode>advanced</mode>
+	</outbound>
+</nat>
