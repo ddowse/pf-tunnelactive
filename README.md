@@ -7,15 +7,23 @@ if a single tunnel disconnects.
 
 ### Installation
 
-Download the code from github.
+Clone the repo or if you dont have [git](https://docs.netgate.com/pfsense/en/latest/recipes/freebsd-pkg-repo.html) installed on
+your pfsense. You can download the [Zip](https://github.com/ddowse/pf-tunnelactive/archive/main.zip) or fetch the
+files.
 
+```bash
+[root@pfSense ~]# mkdir pf-tunnelactive
+[root@pfSense ~]# fetch -o pf-tunnelactive/ https://raw.githubusercontent.com/ddowse/pf-tunnelactive/main/addroute.sh
+[root@pfSense ~]# fetch -o pf-tunnelactive/ https://raw.githubusercontent.com/ddowse/pf-tunnelactive/main/tunnelactive.php
+[root@pfSense ~]# chmod u+x pf-tunnelactive/addroute.sh
+```
 
 
 ### Usage
 The Script can be run via shell(ssh) and send into the background like this
 
-```
-[2.5.0-DEVELOPMENT][root@pfSense.localdomain]/root: nohup /root/pf-tunnelactive/tunnelactive.php 10 3
+```bash
+[root@pfSense ~]# nohup php /root/pf-tunnelactive/tunnelactive.php 10 3 >> /var/log/tunnelactive.log &
 ```
 
 or use pfsense **Command Prompt** found in **Diagnostics**. (Untested!)
@@ -30,8 +38,8 @@ a successful connection is made for all tunnels.
 
 To stop the exection, you have to terminate to program at the moment e.g. like this.
 
-```
-[2.5.0-DEVELOPMENT][root@pfSense.localdomain]/root: pkill -f tunnelactive.php
+```bash
+[root@pfSense ~]# pkill -f tunnelactive 
 ```
 
 ### Example 
@@ -82,7 +90,7 @@ openvpn_get_active_clients();
 ```
 as an array of objects.
 
- ```json
+ ```php
  Array
 (
     [0] => Array
@@ -125,8 +133,8 @@ reverse way. As we want to create a cascade of tunnels.
 ### Cascading VPN
 
 
-![Picture](cascade_tunnels.png)
-##### Picture by John1271 
+![imageoftunnels](cascade_tunnels.png)
+###### image made by John1271 :heart: 
 
 *Important* We assume that you have checked that your OpenVPN Configuration is in general functional and
 that your VPN Provider Supports this. *Important*
@@ -147,7 +155,7 @@ and add under **Advanced Configuration** / **Custom options** In the configurati
 and VPNID 2. 
 
 ```
-up "/root/pf-cascade/addroute.sh NEXT_VPNSERVER_IP"
+route-up "/root/pf-tunnelactive/addroute.sh NEXT_VPNSERVER_IP"
 ```
 Replace NEXT_VPN_SERVER_IP with the IP of the next VPN Endpoint you want to connect to.
 
