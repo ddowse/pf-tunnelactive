@@ -1,4 +1,4 @@
-## pf-tunnelactive - TESTVERSION 
+## pf-tunnelactive 
 Check and restart OpenVPN Client(s) and Cascade Setup
 
 This PHP Code is using the native php functions of pfsense to check the status of OpenVPN client connections.  
