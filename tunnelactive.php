@@ -1,8 +1,8 @@
 <?php
 /** 
- * @author    Daniel Dowse <support@mylinuxadmin.de>
+ * @author    Daniel Dowse <support@mybsdadmin.de>
  * @copyright 2020 Daniel Dowse
- * @version   0.1-alpha
+ * @version   0.2
  * @link      https://github.com/ddowse/pf-tunnelactive
  * THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
  * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
@@ -16,6 +16,7 @@
 require_once "openvpn.inc";
 require_once "service-utils.inc";
 
+//Send notification to webgui/webconfigurator
 function Send_msg($notice)
 {
     file_notice(
@@ -24,6 +25,7 @@ function Send_msg($notice)
     );
 } 
 
+// Checking status 
 function Check($clients)
 {
     foreach($clients as $check) {
@@ -37,17 +39,19 @@ function Check($clients)
 while(true) {
         
     echo "Sleeping (" . $argv[2] . ")..." ;
-            
+    
+    // What ovpn clients are marked as active        
     $clients = openvpn_get_active_clients();
         
     if (Check($clients)) {  
                     
            echo "\nReconnecting...\n";    
         
+        //loop over ...
         foreach ($clients as $client) {        
                $extras['vpnmode'] = "client";
                $extras['id'] = $client['vpnid'];
-        
+        //..and disconnect
                service_control_stop("openvpn", $extras);
                echo "Stopping: " .  $client['name'];
         
@@ -58,16 +62,20 @@ while(true) {
                        echo "\n";
         }
         
+        //how many ovpn clients?
         $index=count($clients);
         
+        //reverse the array
         foreach (array_reverse($clients) as $client) {
+            //take one off
             $index--;
             echo "Starting:" . $client['name'];
             $extras['vpnmode'] = "client";
             $extras['id'] = $client['vpnid'];
             
+            //Start with the most outer tunnel
             service_control_start("openvpn", $extras);
-        
+            
             for ($i=0;$i<$argv[1];$i++) {
                    sleep(1);
                    echo " * ";
