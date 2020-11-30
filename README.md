@@ -195,3 +195,4 @@ ovpnc3 => (80.255.7.98) ovpnc2 => (85.17.28.145) ovpnc1 => (0.0.0.0/1 ) Internet
 
 ## ATTENTION! May contains bugs - Please report if found. Thanks. 
 
+Please see also: https://forum.netgate.com/topic/157520/openvpn-client-cascade/
